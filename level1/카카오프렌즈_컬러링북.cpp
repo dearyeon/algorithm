@@ -6,7 +6,7 @@ using namespace std;
 int dx[] = {0,1,0,-1}; //시계방향
 int dy[] = {-1,0,1,0};
 
-vector<int> solution(int m, int n, vector<vector<int>> picture) {
+vector<int> solution(int m, int n, vector<vector<int> > picture) {
     vector<int> answer(2);
     int number_of_area = 0;
     int max_size_of_one_area = 0;
