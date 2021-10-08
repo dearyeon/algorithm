@@ -44,5 +44,5 @@
 |뉴스 클러스터링||2018 KAKAO BLIND RECRUITMENT|
 |주식가격|stack/queue||
 |최솟값 만들기|||
-||||
+|최댓값과 최솟값|||
 ||||
