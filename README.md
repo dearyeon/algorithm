@@ -76,5 +76,5 @@
 |title|skill|비고|
 |------|------|------|
 |네트워크|bfs/dfs||
-||||
+|정수 삼각형|Dynamic Programming||
 ||||
