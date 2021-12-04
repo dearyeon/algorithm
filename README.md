@@ -1,6 +1,6 @@
 # algorithm
 
-**LEVEL 1**
+**Programmers LEVEL 1**
 ==
 |title|skill|비고|
 |-------------------|------|------|
@@ -44,7 +44,7 @@
 ||||
 
 
-**LEVEL 2**
+**Programmers LEVEL 2**
 ==
 |title|skill|비고|
 |------|------|------|
@@ -73,7 +73,7 @@
 ||||
 
 
-**LEVEL 3**
+**Programmers LEVEL 3**
 ==
 |title|skill|비고|
 |------|------|------|
