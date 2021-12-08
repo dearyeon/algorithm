@@ -1,9 +1,11 @@
 {
-    "files.associations": {
-        "iosfwd": "cpp",
-        "queue": "cpp",
-        "string": "cpp",
-        "algorithm": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
+  "files.associations": {
+    "iosfwd": "cpp",
+    "queue": "cpp",
+    "string": "cpp",
+    "algorithm": "cpp",
+    "iostream": "cpp",
+    "ostream": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
