@@ -71,6 +71,7 @@
 | 피로도                 |                | 위클리 챌린지                               |
 | 캐시                   |                | 2018 KAKAO BLIND RECRUITMENT                |
 | 빛의 경로 사이클       |                | 월간 코드 챌린지 시즌3                      |
+| 점프와 순간 이동       |                | Summer/Winter Coding(~2018)                 |
 |                        |                |                                             |
 |                        |                |                                             |
 
