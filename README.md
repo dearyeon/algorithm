@@ -86,6 +86,8 @@
 | 메뉴 리뉴얼             |                | 2021 KAKAO BLIND RECRUITMENT                |
 | 124 나라의 숫자         |                |                                             |
 | JadenCase 문자열 만들기 |                |                                             |
+| 조이스틱                | 탐욕법(Greedy) |                                             |
+|                         |                |                                             |
 |                         |                |                                             |
 |                         |                |                                             |
 
