@@ -2,7 +2,6 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-//n진법화 메모하기 ★★★★★★
 string convert(int n, int b) {
     string result = "";
     while(n > 0) {
