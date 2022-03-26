@@ -88,6 +88,8 @@
 | JadenCase 문자열 만들기 |                |                                             |
 | 조이스틱                | 탐욕법(Greedy) |                                             |
 | 양궁대회                |                | 2022 KAKAO BLIND RECRUITMENT                |
+| n진수 게임              |                | 2018 KAKAO BLIND RECRUITMENT                |
+|                         |                |                                             |
 |                         |                |                                             |
 |                         |                |                                             |
 
