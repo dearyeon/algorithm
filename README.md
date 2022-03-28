@@ -90,7 +90,7 @@
 | 조이스틱                | 탐욕법(Greedy) |                                             |
 | 양궁대회                |                | 2022 KAKAO BLIND RECRUITMENT                |
 | n진수 게임              |                | 2018 KAKAO BLIND RECRUITMENT                |
-|                         |                |                                             |
+| 프렌즈4블록             |                | 2018 KAKAO BLIND RECRUITMENT                |
 |                         |                |                                             |
 |                         |                |                                             |
 
