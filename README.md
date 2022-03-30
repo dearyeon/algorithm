@@ -91,6 +91,7 @@
 | 양궁대회                |                | 2022 KAKAO BLIND RECRUITMENT                |
 | n진수 게임              |                | 2018 KAKAO BLIND RECRUITMENT                |
 | 프렌즈4블록             |                | 2018 KAKAO BLIND RECRUITMENT                |
+| 전력망을 둘로 나누기    |                | 위클리 챌린지                               |
 |                         |                |                                             |
 |                         |                |                                             |
 
