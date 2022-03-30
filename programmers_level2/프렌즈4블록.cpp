@@ -5,39 +5,39 @@
 #include <queue>
 using namespace std;
 
-//s.append(2,'*'); s에 2만큼 '*' 붙히기 메모하기!!!!!!
-//s.erase(remove(s.begin(), s.end(), ' '), s.end()); remove -> 제거할 모든 인덱스 알려줌
-
 int dx[3] = { 1, 1, 0 };
 int dy[3] = { 0, -1, -1 };
 
-void blockBreak(int x, int y, vector<string> &board, vector<string> &bomb, vector<vector<int> > &visit) {
-    queue<vector<int> > q;
-    q.push({x,y,board[x][y]});
-    visit[x][y] = 1;
-    
-    while(!q.empty()) {
-        int xx = q.front()[0];
-        int yy = q.front()[1];
-        char block = (char)q.front()[2];
-        q.pop();
+void check(int x, int y, vector<string> v, vector<string> &bomb) {
+    char block = v[x][y];
+    for(int i=0; i<3; i++) {
+        int xx = x + dx[i];
+        int yy = y + dy[i];
         
-        for(int i=0; i<3; i++) {
-            int nx = xx + dx[i];
-            int ny = yy + dy[i];
-            
-            if(nx >= board.size() || ny < 0 || block != board[nx][ny]) break;
-            
-            q.push({nx,ny,board[nx][ny]});
-            visit[nx][ny] = 1;
-            
-            if(i == 2) {
-                bomb[xx][yy] = ' ';
-                for(int i=0; i<3; i++)
-                    bomb[xx+dx[i]][yy+dy[i]] = ' ';
-            }
+        if(xx >= bomb.size() || yy < 0 || block != v[xx][yy]) break;
+        
+        if(i == 2) {
+            bomb[x][y] = ' ';
+            bomb[x+dx[0]][y+dy[0]] = ' ';
+            bomb[x+dx[1]][y+dy[1]] = ' ';
+            bomb[x+dx[2]][y+dy[2]] = ' ';
         }
     }
+}
+
+int blockErase(vector<string> &v, vector<string> &bomb) {
+    int bomb_count = 0;
+    for(int i=0; i<bomb.size(); i++) {
+        while(bomb[i].find(' ') != string::npos) {
+            int start = bomb[i].find(' ');
+            int end = start;
+            while(bomb[i][end] == ' ') end++;
+            bomb_count += (end - start);
+            bomb[i].erase(start, end - start);
+        }
+        v[i] = bomb[i];
+    }
+    return bomb_count;
 }
     
 int solution(int m, int n, vector<string> board) {
@@ -53,34 +53,14 @@ int solution(int m, int n, vector<string> board) {
     
     while(true) {
         vector<string> bomb = v;
-        vector<vector<int> > visit(30, vector<int>(30, 0));
-        for(int i=0; i<v.size(); i++) {
-            for(int j=v[i].length()-1; j>=1; j--) {
-                if(!visit[i][j]) blockBreak(i, j, v, bomb, visit);
-            }
+        for(int i=0; i<v.size()-1; i++) {
+            for(int j=v[i].length()-1; j>=1; j--)
+                check(i,j,v,bomb);
         }          
         
-        int bomb_count = 0;
-        for(int i=0; i<bomb.size(); i++) {
-            for(int j=0; j<bomb[i].length(); j++) {
-                if(bomb[i][j] == ' ') {
-                    bomb[i].erase(j--,1);
-                    bomb_count++;
-                }
-            }
-        }
-        /*for(string s : bomb) {
-            while(s.find(' ') != string::npos) {
-                int start = s.find(' ');
-                int end = start;
-                while(s[end] == ' ') end++;
-                bomb_count += (end - start);
-                s.erase(start, end - start);
-            }
-        }*/
+        int bomb_count = blockErase(v,bomb);
         answer += bomb_count;
         if(bomb_count == 0) break;
-        v = bomb;
     }
     
     
