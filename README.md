@@ -93,7 +93,7 @@
 | 프렌즈4블록                |                | 2018 KAKAO BLIND RECRUITMENT                |
 | 전력망을 둘로 나누기       |                | 위클리 챌린지                               |
 | k진수에서 소수 개수 구하기 |                | 2022 KAKAO BLIND RECRUITMENT                |
-|                            |                |                                             |
+| 가장 큰 정사각형 찾기      |                |                                             |
 |                            |                |                                             |
 
 # **Programmers LEVEL 3**
