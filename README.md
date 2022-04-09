@@ -96,6 +96,8 @@
 | 가장 큰 정사각형 찾기      |                |                                             |
 | 땅따먹기                   |                |                                             |
 | 쿼드압축 후 개수 세기      |                | 월간 코드 챌린지 시즌1                      |
+| 후보키                     |                | 2019 KAKAO BLIND RECRUITMENT                |
+|                            |                |                                             |
 |                            |                |                                             |
 
 # **Programmers LEVEL 3**
