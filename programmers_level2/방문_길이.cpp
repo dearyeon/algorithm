@@ -30,16 +30,16 @@ int solution(string dirs) {
             if(buf == 'L') x++;
             if(buf == 'D' && x < 19) x+=2;
             buf = c;
-        } else if(c == 'R' && y < 11) {
+        } else if(c == 'R' && y < 10) {
             if(buf == 'U') x--;
             if(buf == 'D') x++;
             if(buf == 'R' && y < 9) y++;
             buf = c;
-        } else if(c == 'L' && y > 0) {
-            if(buf == 'U') x--, y--;
-            if(buf == 'D') x++, y--;
-            if(buf == 'L') y--;
-            buf = c;
+        } else if(c == 'L') {
+            if(buf == 'U' && y > 0) x--, y--, buf = c;
+            else if(buf == 'D' && y > 0) x++, y--, buf = c;
+            else if(buf == 'L' && y > 0) y--;
+            else if(buf == 'R') buf = c;
         } 
         if(!visit[x][y]) answer++;
         visit[x][y] = 1;
