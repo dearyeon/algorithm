@@ -1,22 +1,14 @@
-#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <map>
 #include <queue>
 using namespace std;
 
-void link(vector<vector<int> > road, vector<int> &v) {
-    for(vector<int> r : road) {
-        v[r[0]-1] = min(v[r[0]-1], v[r[1]-1] + r[2]);
-        v[r[1]-1] = min(v[r[1]-1], v[r[0]-1] + r[2]);
-    }
-}
-
 int solution(int N, vector<vector<int> > road, int K) {
     int answer = 0;
-    
     sort(road.begin(), road.end());
-    vector<int> v(N+1, 0);
+    
+    vector<int> v(N+1, -1);
     map<int, vector<pair<int, int> > > m;
     for(int i=0; i<road.size(); i++) {
         m[road[i][0]].push_back(make_pair(road[i][1], road[i][2]));
@@ -24,25 +16,26 @@ int solution(int N, vector<vector<int> > road, int K) {
     }
     queue<int> q;
     q.push(1);
-    
+    v[1] = 0;
 
    while(!q.empty()) {
         int M = q.front();
         q.pop();
+       
+       if(v[M] == -1) continue;
 
-        int r = v[M]; // + road[i][2];
-
-        if(v[M] > r) {
-            v[M] = r;
+        for(int i=0; i<m[M].size(); i++) {
+            int cmpM = m[M][i].first;
+            int r = m[M][i].second;
+            if(v[cmpM] == -1 || v[cmpM] > v[M] + r) {
+                v[cmpM] = v[M] + r;
+                q.push(cmpM);
+            }
         }
-        //q.push(b);
-        cout << "v["<<M<<"]:"<< v[M] << endl;
     }
     
-    for(int i=1; i<N+1; i++) {
-        cout << v[i] << " ";
+    for(int i=1; i<N+1; i++)
         if(v[i] <= K) answer++;
-    }
 
     return answer;
 }
