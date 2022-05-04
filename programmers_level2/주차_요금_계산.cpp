@@ -13,6 +13,7 @@ int convertMin(string t) {
 vector<int> solution(vector<int> fees, vector<string> records) {
     vector<int> answer;
     map<string, int> m;
+    map<string, int>::iterator it;
     vector<string> parking;
     vector<int> inTime;
     
@@ -28,9 +29,19 @@ vector<int> solution(vector<int> fees, vector<string> records) {
         
         if(state == "OUT") {
             int idx = find(parking.begin(), parking.end(), num) - parking.begin();
-            m[time] += convertMin(time) - inTime[idx];
-            cout << time << " " << num << " " << m[time] << endl;
+            m[num] += convertMin(time) - inTime[idx];
+            parking.erase(parking.begin()+idx);
+            inTime.erase(inTime.begin()+idx);
         }
+    }
+    
+    for(int i=0; i<parking.size(); i++)
+        m[parking[i]] += convertMin("23:59") - inTime[i];
+    
+    for(it=m.begin(); it!=m.end(); it++) {
+        int fee = fees[1];
+        if(it->second > fees[0]) fee += (it->second - fees[0] + fees[2] - 1) / fees[2] * fees[3];
+        answer.push_back(fee);
     }
     
     return answer;
