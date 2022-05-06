@@ -102,6 +102,7 @@
 | 배달                       |                | Summer/Winter Coding(~2018)                 |
 | 파일명 정렬                |                | 2018 KAKAO BLIND RECRUITMENT                |
 | 주차 요금 계산             |                | 2022 KAKAO BLIND RECRUITMENT                |
+| 순위 검색                  |                | 2021 KAKAO BLIND RECRUITMENT                |
 |                            |                |                                             |
 |                            |                |                                             |
 
