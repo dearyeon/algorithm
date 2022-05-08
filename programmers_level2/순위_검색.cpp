@@ -1,44 +1,51 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <map>
+#include <queue>
 using namespace std;
+
+bool cmp(pair<int, int> &a, pair<int, int> &b) {
+    return a.second > b.second;
+}
 
 vector<int> solution(vector<string> info, vector<string> query) {
     vector<int> answer;
     
-    vector<vector<string> > v;
-    for(string s : info) {
-        vector<string> temp;
+    map<string, vector<int> > m;
+    map<string, vector<int> >::iterator it;
+    for(int i=0; i<info.size(); i++) {
+        string s = "";
         int pos = 0;
-        while(s.find(' ',pos) != string::npos) {
-            int len = s.find(' ',pos);
-            temp.push_back(s.substr(pos, len - pos));
+        while(info[i].find(' ',pos) != string::npos) {
+            int len = info[i].find(' ',pos);
+            s += info[i].substr(pos, len - pos);
             pos = len + 1;
         }
-        temp.insert(temp.begin(), s.substr(pos));
-        v.push_back(temp);
+        m[s].push_back(stoi(info[i].substr(pos)));
     }
     
-    for(string s : query) {
+    for(it=m.begin(); it!=m.end(); it++)
+        sort(it->second.begin(), it->second.end(), greater<int>());
+    
+    for(string q : query) {
         int isGood = 0;
+        int score = stoi(q.substr(q.rfind(' ')));
+        string s = "";
         
         vector<string> temp;
         int pos = 0;
-        while(s.find(' and ',pos) != string::npos) {
-            int len = s.find(' and ',pos);
-            temp.push_back(s.substr(pos, len - pos));
+        for(int i=0; i<3; i++) {
+            int len = q.find(" and ",pos);
+            string word = q.substr(pos, len - pos);
+            if(word == "-") s += to_string(i);
+            else s += word;
             pos = len + 5;
         }
-        temp.insert(temp.begin(), s.substr(pos-4));
+        s += q.substr(pos, q.find(' ',pos)-pos);
+        cout << s << endl;
         
-        for(int i=0; i<v.size(); i++) {
-            if(stoi(v[i][0]) < stoi(temp[0])) continue;
-            
-            int j;
-            for(j=1; j<5; j++)
-                if(temp[j] != "-" && v[i][j] != temp[j]) break;
-            if(j == 5) isGood++;
-        }
         
         answer.push_back(isGood);
     }
