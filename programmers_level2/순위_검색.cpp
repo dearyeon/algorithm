@@ -44,9 +44,6 @@ vector<int> solution(vector<string> info, vector<string> query) {
             pos = len + 5;
         }
         s += q.substr(pos, q.find(' ',pos)-pos);
-        cout << s << endl;
-        
-        
         answer.push_back(isGood);
     }
     
