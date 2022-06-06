@@ -104,6 +104,7 @@
 | 주차 요금 계산             |                | 2022 KAKAO BLIND RECRUITMENT                |
 | 순위 검색                  |                | 2021 KAKAO BLIND RECRUITMENT                |
 | 교점에 별 만들기           |                | 위클리 챌린지                               |
+| 2 x n 타일링               |                |                                             |
 |                            |                |                                             |
 |                            |                |                                             |
 
