@@ -111,9 +111,10 @@
 
 # **Programmers LEVEL 3**
 
-| title           | skill               | 비고 |
-| --------------- | ------------------- | ---- |
-| 네트워크        | bfs/dfs             |      |
-| 정수 삼각형     | Dynamic Programming |      |
-| 디스크 컨트롤러 | 힙(Heap)            |      |
-|                 |                     |      |
+| title           | skill               | 비고                            |
+| --------------- | ------------------- | ------------------------------- |
+| 네트워크        | bfs/dfs             |                                 |
+| 정수 삼각형     | Dynamic Programming |                                 |
+| 디스크 컨트롤러 | 힙(Heap)            |                                 |
+| N으로 표현      |                     | 동적계획법(Dynamic Programming) |
+|                 |                     |                                 |
